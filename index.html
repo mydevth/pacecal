@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Load Calculator</title>
+  <title>Pace Calculator</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,23 +23,24 @@
     <div class="row">
       <div class="col-md-6 mx-auto">
         <div class="card card-body text-center mt-5">
-          <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+          <h1 class="heading display-5 pb-3">Pace Calculator</h1>
+          <h5 class="heading display-5 pb-3">Enter Time and Distance to find Pace</h5>
           <form id="loan-form">
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">$</span>
-                <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+                <span class="input-group-addon">Time</span>
+                <input type="number" class="form-control" id="hour" placeholder="Hour">
+                <input type="number" class="form-control" id="minute" placeholder="Minute">
+                <input type="number" class="form-control" id="second" placeholder="Second">
               </div>
             </div>
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">%</span>
-                <input type="number" class="form-control" id="interest" placeholder="Interest">
+                <span class="input-group-addon">Distance [KM]</span>
+                <input type="number" class="form-control" id="kilometer" placeholder="Kilometers">
               </div>
             </div>
-            <div class="form-group">
-              <input type="number" class="form-control" id="years" placeholder="Years to Repay">
-            </div>
+
             <div class="form-group">
               <input type="submit" value="Calcuate" class="btn btn-dark btn-block">
             </div>
@@ -53,20 +54,8 @@
             <h5>Results</h5>
             <div class="form-group">
               <div class="input-group">
-                <span class="input-group-addon">Monthly Payment</span>
-                <input type="number" class="form-control" id="monthly-payment" disabled>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-addon">Total Payment</span>
-                <input type="number" class="form-control" id="total-payment" disabled>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="input-group">
-                <span class="input-group-addon">Total Interest</span>
-                <input type="number" class="form-control" id="total-interest" disabled>
+                <span class="input-group-addon">Pace : [Minute per Kilomater]</span>
+                <input type="number" class="form-control" id="paceperminute" disabled>
               </div>
             </div>
           </div>
@@ -74,8 +63,6 @@
       </div>
     </div>
   </div>
-
-
 
 
 
