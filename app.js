@@ -11,7 +11,7 @@ document.getElementById('loan-form').addEventListener('submit', function (e) {
 
 //calculate results
 function calculateResults() {
-  console.log('Calculating...');
+
   //UI Vars
   const hours = document.getElementById('hour');
   const minutes = document.getElementById('minute');
@@ -23,9 +23,18 @@ function calculateResults() {
   const convertSecToMin = parseFloat(seconds.value) / 60;
 
   const totalMin = convertHrToMin + convertMin + convertSecToMin;
-  const pace = totalMin / parseFloat(kilometer.value);
+
+
   console.log(`total minute ${totalMin}`);
-  console.log(`pace ${pace}`);
+
+
+  const paceHr = Math.floor(totalMin / parseFloat(kilometer.value));
+  const paceMin = Math.floor(((totalMin / parseFloat(kilometer.value)) % 1) * 60);
+
+  console.log(paceHr);
+  console.log(paceMin);
+
+
 
   const pacePerMinute = document.getElementById('paceperminute');
   // const totalPayment = document.getElementById('total-payment');
@@ -41,8 +50,8 @@ function calculateResults() {
 
 
 
-  if (isFinite(pace)) {
-    pacePerMinute.value = pace.toFixed(2);
+  if (isFinite(paceHr, paceMin)) {
+    pacePerMinute.value = paceHr.toFixed(2);
 
     //show results
     document.getElementById('results').style.display = 'block';
