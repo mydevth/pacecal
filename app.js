@@ -36,7 +36,8 @@ function calculateResults() {
 
 
 
-  const pacePerMinute = document.getElementById('paceperminute');
+  const paceMinute = document.getElementById('paceminute');
+  const paceSecond = document.getElementById('pacesecond');
   // const totalPayment = document.getElementById('total-payment');
   // const totalInterest = document.getElementById('total-interest');
 
@@ -51,7 +52,10 @@ function calculateResults() {
 
 
   if (isFinite(paceHr, paceMin)) {
-    pacePerMinute.value = paceHr.toFixed(2);
+
+    paceMinute.value = paceHr.toFixed(0);
+    paceSecond.value = paceMin.toFixed(0);
+
 
     //show results
     document.getElementById('results').style.display = 'block';
