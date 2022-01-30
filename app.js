@@ -5,7 +5,7 @@ document.getElementById('loan-form').addEventListener('submit', function (e) {
 
   //show loader
   document.getElementById('loading').style.display = 'block';
-  setTimeout(calculateResults, 1000);
+  setTimeout(calculateResults, 500);
   e.preventDefault();
 });
 
@@ -24,9 +24,7 @@ function calculateResults() {
 
   const totalMin = convertHrToMin + convertMin + convertSecToMin;
 
-
   console.log(`total minute ${totalMin}`);
-
 
   const paceHr = Math.floor(totalMin / parseFloat(kilometer.value));
   const paceMin = Math.floor(((totalMin / parseFloat(kilometer.value)) % 1) * 60);
@@ -34,28 +32,12 @@ function calculateResults() {
   console.log(paceHr);
   console.log(paceMin);
 
-
-
   const paceMinute = document.getElementById('paceminute');
   const paceSecond = document.getElementById('pacesecond');
-  // const totalPayment = document.getElementById('total-payment');
-  // const totalInterest = document.getElementById('total-interest');
-
-  // const principal = parseFloat(amount.value);
-  // const calculatedInterest = parseFloat(interest.value) / 100 / 12;
-  // const calculatedPayments = parseFloat(years.value) * 12;
-
-  //Compute monthly payment
-  // const x = Math.pow(1 + calculatedInterest, calculatedPayments);
-  // const monthly = (principal * x * calculatedInterest) / (x - 1);
-
-
 
   if (isFinite(paceHr, paceMin)) {
-
     paceMinute.value = paceHr.toFixed(0);
     paceSecond.value = paceMin.toFixed(0);
-
 
     //show results
     document.getElementById('results').style.display = 'block';
@@ -64,22 +46,6 @@ function calculateResults() {
   } else {
     showError('Plase check your numbers');
   }
-
-
-
-  // if (isFinite(monthly)) {
-  //   monthlyPayment.value = monthly.toFixed(2);
-  //   totalPayment.value = (monthly * calculatedPayments).toFixed(2);
-  //   totalInterest.value = ((monthly * calculatedPayments) - principal).toFixed(2);
-
-  //   //show results
-  //   document.getElementById('results').style.display = 'block';
-  //   //hide loader
-  //   document.getElementById('loading').style.display = 'none';
-  // } else {
-  //   showError('Plase check your numbers');
-  // }
-
 }
 
 //Show error
@@ -89,8 +55,6 @@ function showError(error) {
   document.getElementById('results').style.display = 'none';
   //hide loader
   document.getElementById('loading').style.display = 'none';
-
-
 
   //create a div 
   const errorDiv = document.createElement('div');
@@ -105,7 +69,6 @@ function showError(error) {
   errorDiv.appendChild(document.createTextNode(error));
   //Insert error above heading
   card.insertBefore(errorDiv, heading);
-
 
   //clear error after 3 seconds
   setTimeout(clearError, 3000);
