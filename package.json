@@ -1,0 +1,23 @@
+{
+  "name": "mypacecalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mydevth/pacecal.git"
+  },
+  "author": "akkadate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mydevth/pacecal/issues"
+  },
+  "homepage": "https://github.com/mydevth/pacecal#readme",
+  "engines": {
+    "node": "16.14.0",
+    "npm": "8.1.3"
+  }
+}
